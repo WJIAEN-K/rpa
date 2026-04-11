@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    ports:
+      # 对外用 80；本机 80 被占用时改为 "8080:80"
+      - "80:80"
+    restart: unless-stopped
