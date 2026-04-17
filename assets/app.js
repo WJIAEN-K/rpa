@@ -76,7 +76,7 @@ function fallbackCopyValue(value) {
 
 function copyEmail(e) {
   e.preventDefault();
-  var email = 'kwjiaen@163.com';
+  var email = 'wakeupgyh@163.com';
   copyTextWithFallback(email, function (ok) {
     if (ok) showToast(email);
     else showToast(email, { prefix: '复制失败，请手动复制：', error: true });
@@ -129,7 +129,7 @@ function copyContactKey(e, value) {
     input.setAttribute('aria-invalid', 'false');
     var body = '您好，我想咨询 RPA AI 自动化方案。\n\n【我的联系邮箱】' + v + '\n\n【需求概要】\n（请简要描述业务场景、期望效果、预算范围）\n';
     var subject = 'RPA AI 自动化咨询';
-    window.location.href = 'mailto:kwjiaen@163.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = 'mailto:wakeupgyh@163.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
   input.addEventListener('input', function () {
     err.textContent = '';
