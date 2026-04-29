@@ -105,6 +105,17 @@ function copyContactKey(e, value) {
   }
 }
 
+(function initFallbackImages() {
+  document.querySelectorAll('img[data-fallback-src]').forEach(function (img) {
+    img.addEventListener('error', function handleError() {
+      var fallbackSrc = img.getAttribute('data-fallback-src');
+      if (!fallbackSrc || img.getAttribute('data-fallback-applied') === 'true') return;
+      img.setAttribute('data-fallback-applied', 'true');
+      img.src = fallbackSrc;
+    }, { once: true });
+  });
+})();
+
 (function initConsultForm() {
   var form = document.getElementById('cta-form');
   var input = document.getElementById('cta-user-email');
